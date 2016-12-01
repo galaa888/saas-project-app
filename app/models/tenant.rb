@@ -2,7 +2,7 @@ class Tenant < ActiveRecord::Base
 
   acts_as_universal_and_determines_tenant
   has_many :members, dependent: :destroy
-  has_many :projects, dependent: :destroy
+  has_many :projects
   has_one :payment
   accepts_nested_attributes_for :payment
 
