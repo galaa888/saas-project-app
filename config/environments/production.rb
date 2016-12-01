@@ -1,5 +1,5 @@
 Rails.application.configure do
-   
+
   # devise says to define default url
   config.action_mailer.default_url_options = { :host => 'secure.simple-milia-app.com', :protocol => 'https' }
 
@@ -23,8 +23,10 @@ Rails.application.configure do
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
-  config.eager_load = true
+  config.eager_load = false
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { :host => 'saas-app-galaa.herokuapp.com', :protocol => 'https'}
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true

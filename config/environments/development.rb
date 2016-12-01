@@ -1,5 +1,5 @@
 Rails.application.configure do
-   
+
   # devise says to define default url
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
@@ -8,7 +8,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.delivery_method = :smtp
-  
+
   ActionMailer::Base.smtp_settings = {
     :address => "smtp.gmail.com",
     :port => "587",
@@ -26,7 +26,10 @@ Rails.application.configure do
   config.cache_classes = false
 
   # Do not eager load code on boot.
-  config.eager_load = false
+  config.eager_load = true
+
+  config.action_mailer.delivery_method = :test
+  config.action_mailer.default_url_options = { :host=> 'saas-app-galaa.heroku.com', :protocl => 'https'}
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
